@@ -50,6 +50,8 @@ public class CreateServlet extends HttpServlet {
             em.getTransaction().commit();
             em.close();
 
+            request.getSession().setAttribute("_flush", "新規タスクの登録が完了しました!");
+
             response.sendRedirect(request.getContextPath() + "/index");
         }
     }

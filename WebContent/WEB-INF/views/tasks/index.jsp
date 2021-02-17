@@ -2,6 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="../templates/app.jsp">
     <c:param name="content">
+
+        <c:if test="${_flush != null}">
+            <div id="flush_success">
+                <c:out value="${_flush}" />
+            </div>
+        </c:if>
+
         <h2>タスク一覧</h2>
 
         <ul>
