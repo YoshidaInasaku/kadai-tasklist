@@ -14,7 +14,6 @@
             </c:forEach>
         </ul>
 
-        <input type="hidden" name="_token" value="${_token}" />
         <p><a href="${pageContext.request.contextPath}/new">新規作成</a></p>
     </c:param>
 </c:import>

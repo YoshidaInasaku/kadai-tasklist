@@ -5,4 +5,6 @@
 <input type="text" name="content" value="${task.content}" />
 <br /><br />
 
+<input type="hidden" name="_token" value="${_token}" />
+
 <button type="submit">作成</button>
