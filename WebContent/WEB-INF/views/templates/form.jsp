@@ -8,4 +8,4 @@
 <input type="hidden" name="_token" value="${_token}" />
 <input type="hidden" name="_flush" value="${_flush}" />
 
-<button type="submit">作成</button>
+<button type="submit">投稿</button>
