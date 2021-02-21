@@ -5,6 +5,7 @@
         <c:choose>
             <c:when test="${task == null}">
                 <h2>お探しのタスクは見つかりませんでした。</h2>
+                <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
             </c:when>
             <c:otherwise>
                  <h2>id : ${task.id} の編集ページ</h2>

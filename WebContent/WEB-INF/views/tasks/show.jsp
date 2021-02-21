@@ -7,6 +7,7 @@
         <c:choose>
             <c:when test="${task == null}">
                 <h2>お探しのタスクは見つかりませんでした。</h2>
+                <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
             </c:when>
 
             <c:otherwise>
@@ -28,11 +29,11 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <p><a href="{pageContext.request.contextPath}/index">一覧に戻る</a></p>
+                <p><a href="${pageContext.request.contextPath}/edit?id=${task.id}">このタスクを編集する</a></p>
+
             </c:otherwise>
         </c:choose>
-
-        <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
-        <p><a href="${pageContext.request.contextPath}/edit?id=${task.id}">このページを編集する</a></p>
-
     </c:param>
 </c:import>

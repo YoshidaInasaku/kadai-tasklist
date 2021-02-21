@@ -44,6 +44,8 @@ public class DestroyServlet extends HttpServlet {
 
             request.getSession().removeAttribute("task_id");
 
+            request.getSession().setAttribute("_flush", "タスクの削除が完了しました!");
+
             response.sendRedirect(request.getContextPath() + "/index");
         }
     }
