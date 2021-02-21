@@ -40,8 +40,13 @@ public class EditServlet extends HttpServlet {
         request.setAttribute("task", task);
         request.setAttribute("_token", request.getSession().getId());
 
-        // CSREF対策にUpdateServletに登録
-        request.getSession().setAttribute("task_id", task.getId());
+        /*
+         * 該当のIDがあればidを送付　なければ実行しない
+         * CSREF対策にUpdateServletに登録
+        */
+        if(task != null) {
+            request.getSession().setAttribute("task_id", task.getId());
+        }
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasks/edit.jsp");
         rd.forward(request, response);

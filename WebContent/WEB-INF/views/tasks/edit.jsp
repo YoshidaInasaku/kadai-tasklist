@@ -2,25 +2,31 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="../templates/app.jsp">
     <c:param name="content">
-        <h2>id : ${task.id} の編集ページ</h2>
+        <c:choose>
+            <c:when test="${task == null}">
+                <h2>お探しのタスクは見つかりませんでした。</h2>
+            </c:when>
+            <c:otherwise>
+                 <h2>id : ${task.id} の編集ページ</h2>
 
-        <form method="POST" action="${pageContext.request.contextPath}/update">
-            <c:import url="../templates/form.jsp" />
-        </form>
+                 <form method="POST" action="${pageContext.request.contextPath}/update">
+                     <c:import url="../templates/form.jsp" />
+                </form>
 
-        <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
+                <p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
 
-        <p><a href="#" onclick="confirmDestroy();">このタスクを削除する</a></p>
-        <form method="POST" action="${pageContext.request.contextPath}/destroy">
-            <input type="hidden" name="_token" value="${_token}" />
-        </form>
-        <script>
-            function confirmDestroy() {
-                if(confirm('本当に削除してよろしいでしょうか')) {
-                    document.forms[1].submit();  // 2番目のフォームへpostさせるため、[1]で指定
-                }
-            }
-        </script>
-
+                <p><a href="#" onclick="confirmDestroy();">このタスクを削除する</a></p>
+                <form method="POST" action="${pageContext.request.contextPath}/destroy">
+                    <input type="hidden" name="_token" value="${_token}" />
+                </form>
+                <script>
+                    function confirmDestroy() {
+                        if(confirm('本当に削除してよろしいでしょうか')) {
+                            document.forms[1].submit();  // 2番目のフォームへpostさせるため、[1]で指定
+                        }
+                    }
+                </script>
+            </c:otherwise>
+        </c:choose>
     </c:param>
 </c:import>
