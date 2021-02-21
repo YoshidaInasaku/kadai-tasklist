@@ -50,13 +50,18 @@ table, tr, th, td {
 }
 
 table {
-    width: 100px;
+    width: 100%;
     table-layout: fixed;
 }
 
 th {
     width: 26%;
     padding: 10px 2%;
+}
+
+td {
+    width: 66%;
+    padding: 10px 2%
 }
 
 button {
