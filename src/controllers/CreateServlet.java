@@ -49,6 +49,7 @@ public class CreateServlet extends HttpServlet {
             task.setCreated_at(currentTime);
             task.setUpdated_at(currentTime);
 
+            // バリデーションを実行
             List<String> errors = TaskValidator.validate(task);
             if(errors.size() > 0) {
                 em.close();
